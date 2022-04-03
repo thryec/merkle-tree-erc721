@@ -17,7 +17,7 @@ const rootHash = merkleTree.getRoot()
 // console.log('root hash:', rootHash.toString('hex'))
 console.log('merkle tree: \n ', merkleTree.toString())
 
-const claimingAddress = whitelist[0]
+const claimingAddress = keccak256(whitelist[0])
 const hexProof = merkleTree.getProof(claimingAddress)
 const valid = merkleTree.verify(hexProof, claimingAddress, rootHash)
 
