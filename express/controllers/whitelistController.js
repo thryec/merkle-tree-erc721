@@ -27,6 +27,7 @@ app.get('/seed', async (req, res) => {
   }
 })
 
+// add address to whitelist
 app.post('/', async (req, res) => {
   console.log(req.body)
   try {
@@ -37,6 +38,12 @@ app.post('/', async (req, res) => {
     console.log(error.message)
     res.status(500).send('Error occurred while adding to whitelist')
   }
+})
+
+// check if address is in whitelist
+app.post('/verify', async (req, res) => {
+  console.log(req.body)
+  res.send('hello world')
 })
 
 module.exports = app
