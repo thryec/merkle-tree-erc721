@@ -16,8 +16,8 @@ console.log('root hash:', rootHash.toString('hex'))
 // console.log('merkle tree: \n ', merkleTree.toString())
 
 const claimingAddress = leafNodes[0]
-const hexProof = merkleTree.getProof(claimingAddress)
-const valid = merkleTree.verify(hexProof, claimingAddress, rootHash)
+const goodProof = merkleTree.getHexProof(claimingAddress)
+const goodValid = merkleTree.verify(goodProof, claimingAddress, rootHash)
 
-console.log('proof: ', hexProof)
-console.log('validity: ', valid)
+console.log('good proof: ', goodProof)
+console.log('good valid: ', goodValid)
