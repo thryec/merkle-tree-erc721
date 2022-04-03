@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const whitelistSchema = new Schema(
   {
@@ -9,6 +9,6 @@ const whitelistSchema = new Schema(
     },
   },
   { timestamps: true }
-);
+)
 
-module.exports = mongoose.model("Whitelist", whitelistSchema);
+module.exports = mongoose.model('Whitelist', whitelistSchema)
