@@ -19,14 +19,16 @@ contract NFT is ERC721URIStorage, Ownable {
     Counters.Counter private _tokenIds;
 
     constructor(bytes32 _rootHash) ERC721("Merkle", "MRKL") {
-        console.log("Deploying merkle tree whitelist nft");
+        // console.log("Deploying merkle tree whitelist nft");
         merkleRoot = _rootHash;
     }
 
     function whitelistMint(bytes32[] calldata _merkleProof) public {
+        console.log("msg sender", msg.sender);
         bytes32 leaf = keccak256(abi.encodePacked(msg.sender));
         bool proof = MerkleProof.verify(_merkleProof, merkleRoot, leaf);
         console.log("merkle proof: ", proof);
+        // require(proof, "Invalid whitelist address");
         // mint
     }
 
